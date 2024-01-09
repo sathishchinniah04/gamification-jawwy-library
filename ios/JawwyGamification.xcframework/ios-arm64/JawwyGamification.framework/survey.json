@@ -1,0 +1,69 @@
+{
+    "questionType": "Survey",
+    "numberOfQuestions": 4,
+    "questionaire": [
+        {
+            "questionId": "56",
+            "question": "Do you have any Feedback?",
+            "questionType": "Feedback",
+            "feedback": true
+        },
+        {
+            "questionId": "57",
+            "question": "Rate this app?",
+            "questionType": "Rating",
+            "rating": [
+                {
+                    "min": 1,
+                    "max": 5
+                }
+            ],
+            "additionalData": [
+                {
+                    "key": "RATING_FEEDBACK_HEADER",
+                    "value": "test"
+                }
+            ]
+        },
+        {
+            "questionId": "58",
+            "question": "Which Operator are you using?",
+            "options": [
+                {
+                    "optionId": 85,
+                    "option": "STC",
+                    "correctAnswer": false
+                },
+                {
+                    "optionId": 86,
+                    "option": "Vodafone",
+                    "correctAnswer": false
+                },
+                {
+                    "optionId": 87,
+                    "option": "Airtel",
+                    "correctAnswer": false
+                }
+            ],
+            "questionType": "Multiple Option"
+        },
+        {
+            "questionId": "59",
+            "question": "Which City you are working in?",
+            "options": [
+                {
+                    "optionId": 88,
+                    "option": "Chennai",
+                    "correctAnswer": false
+                },
+                {
+                    "optionId": 89,
+                    "option": "Bangalore",
+                    "correctAnswer": false
+                }
+            ],
+            "questionType": "Quiz"
+        }
+    ],
+    "id": "17"
+}

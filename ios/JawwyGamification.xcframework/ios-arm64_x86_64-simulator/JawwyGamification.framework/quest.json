@@ -1,0 +1,153 @@
+{
+    "timestamp": "20240103122846",
+    "respCode": "SC0000",
+    "respDesc": "Success",
+    "questList": [
+        {
+            "questId": "11",
+            "questSequence": "2",
+            "expiryMonth": "1",
+            "questCompleted": false,
+            "rewardDetails": [
+                {
+                    "rewardId": "12",
+                    "rewardType": "2",
+                    "rewardGiven": false,
+                    "rewardTitle": "Unlock Premium Reward",
+                    "rewardMessage": "You have a chance to win 20GB data pack",
+                    "additionalData": [
+                        {
+                            "key": "REWARD_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLLDdo7vmgL0by3A0_fxdq3xxA3LU1bzTnOb2PpUfHnyah5MDify-PvwxqA4JSwNR4mKs&usqp=CAU"
+                        },
+                        {
+                            "key": "REWARD_COMPLETED_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5dxV8jOaaWz-Yo4psFgH0qf5Hu83B0oCvbA&usqp=CAU"
+                        }
+                    ]
+                }
+            ],
+            "eventList": [
+                {
+                    "eventId": 54,
+                    "eventTitle": "Recharge & Earn 50 Points",
+                    "eventShortDesc": "Recharge 5 OMR talktime",
+                    "eventLongDesc": "Complete the Recharge & Earn task to unlock premium rewards !",
+                    "target": "5",
+                    "validityDays": "10",
+                    "eventCompleted": false,
+                    "additionalData": [
+                        {
+                            "key": "EVENT_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS56yYpI6d0Kmm3fB2SiJZyqaZHEZes_dbqWf9xupDpb5yUfkYKnQbTs-W7rwTfX6winXk&usqp=CAU"
+                        },
+                        {
+                            "key": "EVENT_COMPLETED_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5dxV8jOaaWz-Yo4psFgH0qf5Hu83B0oCvbA&usqp=CAU"
+                        },
+                        {
+                            "key": "EVENT_CONSTANT",
+                            "value": "Recharge"
+                        }
+                    ]
+                },
+                {
+                    "eventId": 55,
+                    "eventTitle": "Call & Earn 100 points",
+                    "eventShortDesc": "Make 10 local calls",
+                    "eventLongDesc": "Complete Call & Earn task to unlock premium rewards !",
+                    "target": "10",
+                    "validityDays": "10",
+                    "eventCompleted": false,
+                    "additionalData": [
+                        {
+                            "key": "EVENT_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS56yYpI6d0Kmm3fB2SiJZyqaZHEZes_dbqWf9xupDpb5yUfkYKnQbTs-W7rwTfX6winXk&usqp=CAU"
+                        },
+                        {
+                            "key": "EVENT_COMPLETED_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5dxV8jOaaWz-Yo4psFgH0qf5Hu83B0oCvbA&usqp=CAU"
+                        },
+                        {
+                            "key": "EVENT_CONSTANT",
+                            "value": "Contact"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "questId": "11",
+            "questSequence": "2",
+            "expiryMonth": "1",
+            "questCompleted": false,
+            "rewardDetails": [
+                {
+                    "rewardId": "12",
+                    "rewardType": "2",
+                    "rewardGiven": false,
+                    "rewardTitle": "Unlock Premium Reward",
+                    "rewardMessage": "You have a chance to win 20GB data pack",
+                    "additionalData": [
+                        {
+                            "key": "REWARD_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLLDdo7vmgL0by3A0_fxdq3xxA3LU1bzTnOb2PpUfHnyah5MDify-PvwxqA4JSwNR4mKs&usqp=CAU"
+                        },
+                        {
+                            "key": "REWARD_COMPLETED_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5dxV8jOaaWz-Yo4psFgH0qf5Hu83B0oCvbA&usqp=CAU"
+                        }
+                    ]
+                }
+            ],
+            "eventList": [
+                {
+                    "eventId": 54,
+                    "eventTitle": "Use Data & Earn 150 Points",
+                    "eventShortDesc": "Use 2GB data",
+                    "eventLongDesc": "Complete Use Data & Earn task to unlock premium rewards !",
+                    "target": "2",
+                    "validityDays": "10",
+                    "eventCompleted": false,
+                    "additionalData": [
+                        {
+                            "key": "EVENT_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS56yYpI6d0Kmm3fB2SiJZyqaZHEZes_dbqWf9xupDpb5yUfkYKnQbTs-W7rwTfX6winXk&usqp=CAU"
+                        },
+                        {
+                            "key": "EVENT_COMPLETED_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5dxV8jOaaWz-Yo4psFgH0qf5Hu83B0oCvbA&usqp=CAU"
+                        },
+                        {
+                            "key": "EVENT_CONSTANT",
+                            "value": "Youtube"
+                        }
+                    ]
+                },
+                {
+                    "eventId": 55,
+                    "eventTitle": "Recharge & Earn 50 Points",
+                    "eventShortDesc": "Recharge 5 OMR talktime",
+                    "eventLongDesc": "Complete the Recharge & Earn task to unlock premium rewards !",
+                    "target": "5",
+                    "validityDays": "10",
+                    "eventCompleted": false,
+                    "additionalData": [
+                        {
+                            "key": "EVENT_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS56yYpI6d0Kmm3fB2SiJZyqaZHEZes_dbqWf9xupDpb5yUfkYKnQbTs-W7rwTfX6winXk&usqp=CAU"
+                        },
+                        {
+                            "key": "EVENT_COMPLETED_ICON",
+                            "value": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5dxV8jOaaWz-Yo4psFgH0qf5Hu83B0oCvbA&usqp=CAU"
+                        },
+                        {
+                            "key": "EVENT_CONSTANT",
+                            "value": "Recharge"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

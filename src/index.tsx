@@ -17,6 +17,6 @@ const GamificationJawwyLibrary = NativeModules.GamificationJawwyLibrary
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return GamificationJawwyLibrary.multiply(a, b);
+export function loadGame(msisdn: String, baseUrl: String, subscriptionId: String, language: String, token: String): Promise<string> {
+  return GamificationJawwyLibrary.loadGame(msisdn, baseUrl, subscriptionId, language, token);
 }

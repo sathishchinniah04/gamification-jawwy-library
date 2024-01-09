@@ -1,0 +1,1524 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name JawwyGamification
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import CoreGraphics
+import CoreText
+import Foundation
+import ImageIO
+@_exported import JawwyGamification
+import QuartzCore
+import Swift
+import UIKit
+import UIKit/*.UIKit*/
+import UIKit
+import _Concurrency
+import _StringProcessing
+public typealias LottieCompletionBlock = (Swift.Bool) -> Swift.Void
+@objc public protocol CountdownTimerDelegate {
+  @objc optional func timerDidUpdateCounterValue(newValue: Swift.Int)
+  @objc optional func timerDidStart()
+  @objc optional func timerDidPause()
+  @objc optional func timerDidResume()
+  @objc optional func timerDidEnd()
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class IQBarButtonItem : UIKit.UIBarButtonItem {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var tintColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open func setTarget(_ target: Swift.AnyObject?, action: ObjectiveC.Selector?)
+  @objc @_Concurrency.MainActor(unsafe) open var invocation: JawwyGamification.IQInvocation?
+  @objc deinit
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func loadGif(name: Swift.String)
+  @available(iOS 9.0, *)
+  @_Concurrency.MainActor(unsafe) public func loadGif(asset: Swift.String)
+}
+extension UIKit.UIImage {
+  public class func gifModel(asset: Swift.String) -> UIKit.UIImage?
+  public class func gif(data: Foundation.Data) -> UIKit.UIImage?
+  public class func gif(url: Swift.String) -> UIKit.UIImage?
+  public class func gif(name: Swift.String) -> UIKit.UIImage?
+  @available(iOS 9.0, *)
+  public class func gif(asset: Swift.String) -> UIKit.UIImage?
+}
+extension JawwyGamification.Color : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @_Concurrency.MainActor(unsafe) open class AnimatedControl : UIKit.UIControl {
+  @_Concurrency.MainActor(unsafe) final public let animationView: JawwyGamification.AnimationView
+  @_Concurrency.MainActor(unsafe) public var animation: JawwyGamification.Animation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var animationSpeed: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public func setLayer(named: Swift.String, forState: UIKit.UIControl.State)
+  @_Concurrency.MainActor(unsafe) public func setValueProvider(_ valueProvider: any JawwyGamification.AnyValueProvider, keypath: JawwyGamification.AnimationKeypath)
+  @_Concurrency.MainActor(unsafe) public init(animation: JawwyGamification.Animation)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isSelected: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isHighlighted: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func continueTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func cancelTracking(with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) open func animationDidSet()
+  @objc deinit
+}
+extension JawwyGamification.IQKeyboardManager {
+  @objc dynamic public var keyboardShowing: Swift.Bool {
+    @objc get
+  }
+  public typealias UIViewAnimationOptions = UIKit.UIView.AnimationOptions
+}
+extension JawwyGamification.AnimationView {
+  @_Concurrency.MainActor(unsafe) convenience public init(name: Swift.String, bundle: Foundation.Bundle = Bundle.main, imageProvider: (any JawwyGamification.AnimationImageProvider)? = nil, animationCache: (any JawwyGamification.AnimationCacheProvider)? = LRUAnimationCache.sharedCache)
+  @_Concurrency.MainActor(unsafe) convenience public init(filePath: Swift.String, imageProvider: (any JawwyGamification.AnimationImageProvider)? = nil, animationCache: (any JawwyGamification.AnimationCacheProvider)? = LRUAnimationCache.sharedCache)
+  @_Concurrency.MainActor(unsafe) convenience public init(url: Foundation.URL, imageProvider: (any JawwyGamification.AnimationImageProvider)? = nil, closure: @escaping JawwyGamification.AnimationView.DownloadClosure, animationCache: (any JawwyGamification.AnimationCacheProvider)? = LRUAnimationCache.sharedCache)
+  public typealias DownloadClosure = ((any Swift.Error)?) -> Swift.Void
+}
+@objc public class IQBarButtonItemConfiguration : ObjectiveC.NSObject {
+  public typealias UIBarButtonSystemItem = UIKit.UIBarButtonItem.SystemItem
+  @objc public init(barButtonSystemItem: JawwyGamification.IQBarButtonItemConfiguration.UIBarButtonSystemItem, action: ObjectiveC.Selector)
+  @objc public init(image: UIKit.UIImage, action: ObjectiveC.Selector)
+  @objc public init(title: Swift.String, action: ObjectiveC.Selector)
+  final public let barButtonSystemItem: JawwyGamification.IQBarButtonItemConfiguration.UIBarButtonSystemItem?
+  @objc final public let image: UIKit.UIImage?
+  @objc final public let title: Swift.String?
+  @objc final public let action: ObjectiveC.Selector?
+  @objc deinit
+}
+@objc extension UIKit.UIImage {
+  @objc public static func keyboardLeftImage() -> UIKit.UIImage?
+  @objc public static func keyboardRightImage() -> UIKit.UIImage?
+  @objc public static func keyboardUpImage() -> UIKit.UIImage?
+  @objc public static func keyboardDownImage() -> UIKit.UIImage?
+  @objc public static func keyboardPreviousImage() -> UIKit.UIImage?
+  @objc public static func keyboardNextImage() -> UIKit.UIImage?
+}
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var keyboardToolbar: JawwyGamification.IQToolbar {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldHideToolbarPlaceholder: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var toolbarPlaceholder: Swift.String? {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var drawingToolbarPlaceholder: Swift.String? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addKeyboardToolbarWithTarget(target: Swift.AnyObject?, titleText: Swift.String?, rightBarButtonConfiguration: JawwyGamification.IQBarButtonItemConfiguration?, previousBarButtonConfiguration: JawwyGamification.IQBarButtonItemConfiguration? = nil, nextBarButtonConfiguration: JawwyGamification.IQBarButtonItemConfiguration? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, action: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, action: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithImage(_ image: UIKit.UIImage, target: Swift.AnyObject?, action: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithImage(_ image: UIKit.UIImage, target: Swift.AnyObject?, action: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithText(_ text: Swift.String, target: Swift.AnyObject?, action: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithText(_ text: Swift.String, target: Swift.AnyObject?, action: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addCancelDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, cancelAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonTitle: Swift.String, rightButtonTitle: Swift.String, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonImage: UIKit.UIImage, rightButtonImage: UIKit.UIImage, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addCancelDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, cancelAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonTitle: Swift.String, rightButtonTitle: Swift.String, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonImage: UIKit.UIImage, rightButtonImage: UIKit.UIImage, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonImage: UIKit.UIImage, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonTitle: Swift.String, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonImage: UIKit.UIImage, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonTitle: Swift.String, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+}
+final public class GradientValueProvider : JawwyGamification.AnyValueProvider {
+  public typealias ColorsValueBlock = (CoreFoundation.CGFloat) -> [JawwyGamification.Color]
+  public typealias ColorLocationsBlock = (CoreFoundation.CGFloat) -> [Swift.Double]
+  final public var colors: [JawwyGamification.Color] {
+    get
+    set
+  }
+  final public var locations: [Swift.Double] {
+    get
+    set
+  }
+  public init(block: @escaping JawwyGamification.GradientValueProvider.ColorsValueBlock, locations: JawwyGamification.GradientValueProvider.ColorLocationsBlock? = nil)
+  public init(_ colors: [JawwyGamification.Color], locations: [Swift.Double] = [])
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
+  @objc deinit
+}
+public enum ColorFormatDenominator {
+  case One
+  case OneHundred
+  case TwoFiftyFive
+  public static func == (a: JawwyGamification.ColorFormatDenominator, b: JawwyGamification.ColorFormatDenominator) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Color {
+  public var r: Swift.Double
+  public var g: Swift.Double
+  public var b: Swift.Double
+  public var a: Swift.Double
+  public init(r: Swift.Double, g: Swift.Double, b: Swift.Double, a: Swift.Double, denominator: JawwyGamification.ColorFormatDenominator = .One)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AnimatedButton : JawwyGamification.AnimatedControl {
+  @_Concurrency.MainActor(unsafe) final public func setPlayRange(fromProgress: JawwyGamification.AnimationProgressTime, toProgress: JawwyGamification.AnimationProgressTime, event: UIKit.UIControl.Event)
+  @_Concurrency.MainActor(unsafe) final public func setPlayRange(fromMarker fromName: Swift.String, toMarker toName: Swift.String, event: UIKit.UIControl.Event)
+  @_Concurrency.MainActor(unsafe) override public init(animation: JawwyGamification.Animation)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override final public func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override final public func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  @objc deinit
+}
+extension JawwyGamification.IQKeyboardManager {
+  @objc dynamic public var movedDistance: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc dynamic public var movedDistanceChanged: ((CoreFoundation.CGFloat) -> Swift.Void)? {
+    @objc get
+    @objc set(newValue)
+  }
+}
+public struct CollisionEffect {
+  public var force: Swift.Double
+  public var angle: CoreFoundation.CGFloat
+  public init(force: Swift.Double = 10, angle: CoreFoundation.CGFloat = 30)
+}
+@objc public enum IQAutoToolbarManageBehaviour : Swift.Int {
+  case bySubviews
+  case byTag
+  case byPosition
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum IQPreviousNextDisplayMode : Swift.Int {
+  case `default`
+  case alwaysHide
+  case alwaysShow
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum IQEnableMode : Swift.Int {
+  case `default`
+  case enabled
+  case disabled
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension QuartzCore.CALayer {
+  public func logLayerTree(withIndent: Swift.Int = 0)
+}
+extension JawwyGamification.SFWConfiguration {
+  public static var variousWheelPodiumConfiguration: JawwyGamification.SFWConfiguration {
+    get
+  }
+}
+extension JawwyGamification.TextPreferences {
+  public static func variousWheelPodiumText(textColor: UIKit.UIColor) -> JawwyGamification.TextPreferences
+}
+extension JawwyGamification.ImagePreferences {
+  public static var variousWheelPodiumImage: JawwyGamification.ImagePreferences {
+    get
+  }
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func addBlur(style: UIKit.UIBlurEffect.Style = .extraLight) -> UIKit.UIVisualEffectView
+}
+public enum CoordinateSpace : Swift.Int, Swift.Codable {
+  case type2d
+  case type3d
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+final public class Animation : Swift.Codable {
+  final public let startFrame: JawwyGamification.AnimationFrameTime
+  final public let endFrame: JawwyGamification.AnimationFrameTime
+  final public let framerate: Swift.Double
+  final public var markerNames: [Swift.String] {
+    get
+  }
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class IQTitleBarButtonItem : JawwyGamification.IQBarButtonItem {
+  @objc @_Concurrency.MainActor(unsafe) open var titleFont: UIKit.UIFont? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var titleColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var selectableTitleColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override open var invocation: JawwyGamification.IQInvocation? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) convenience public init(title: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class IQToolbar : UIKit.UIToolbar, UIKit.UIInputViewAudioFeedback {
+  @objc @_Concurrency.MainActor(unsafe) open var previousBarButton: JawwyGamification.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var nextBarButton: JawwyGamification.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var titleBarButton: JawwyGamification.IQTitleBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var doneBarButton: JawwyGamification.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var fixedSpaceBarButton: JawwyGamification.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var tintColor: UIKit.UIColor! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc open var enableInputClicksWhenVisible: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public enum GamesList {
+  case SpinAndWin
+  case ReferAndWin
+  case GuessTheBrand
+  case SurveyDelight
+  case StayActiveAndWin
+  case ShakePhoneAndWin
+  case ShakeBoxAndWin
+  case PredictTheWinner
+  case DownloadAndWinVoucher
+  case Jackpot
+  case Greeting
+  case FantasticWeek
+  case Lottery
+  case SurpriseLottery
+  case MegaLottery
+  case ActivityAssigmentFamily
+  case MemoryGame
+  case RollAndWin
+  case Quiz
+  case Sudoko
+  case Football
+  case FootballRandomRewardSelection
+  case FindThePlayer
+  case RandomBallSelection
+  case GuessTheScore
+  case FootballQuestionnaire
+  case FootballShakePhoneAndWin
+  case GuessTheJersey
+  case EmblemPrediction
+  case BuyTicketAndWinGifts
+  public static func == (a: JawwyGamification.GamesList, b: JawwyGamification.GamesList) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CellType {
+  case QuestEventInitialCell
+  case QuestEventInprogressCell
+  case QuestEventCompletedCell
+  public static func == (a: JawwyGamification.CellType, b: JawwyGamification.CellType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum RewardCellType {
+  case QuestRewardInitialViewCell
+  case QuestRewardInprogressViewCell
+  case QuestRewardCompletedViewCell
+  public static func == (a: JawwyGamification.RewardCellType, b: JawwyGamification.RewardCellType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum EventCellType {
+  case QuestEventInitialViewCell
+  case QuestEventInprogressViewCell
+  case QuestEventCompletedViewCell
+  public static func == (a: JawwyGamification.EventCellType, b: JawwyGamification.EventCellType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct LinePreferences {
+  public var height: CoreFoundation.CGFloat
+  public var colorType: JawwyGamification.SFWConfiguration.ColorType
+  public var verticalOffset: CoreFoundation.CGFloat
+  public init(colorType: JawwyGamification.SFWConfiguration.ColorType, height: CoreFoundation.CGFloat = 1, verticalOffset: CoreFoundation.CGFloat = 0)
+}
+extension UIKit.UIColor {
+  public var lottieColorValue: JawwyGamification.Color {
+    get
+  }
+}
+extension UIKit.UIFont {
+  public static let loadMyFonts: ()
+}
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public static let configureFacebookId: ()
+}
+extension Swift.Array {
+  public subscript(index: Swift.Int, default defaultValue: @autoclosure () -> Element) -> Element {
+    get
+  }
+}
+public enum LayerType : Swift.Int, Swift.Codable {
+  case precomp
+  case solid
+  case image
+  case null
+  case shape
+  case text
+  public init(from decoder: any Swift.Decoder) throws
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum MatteType : Swift.Int, Swift.Codable {
+  case none
+  case add
+  case invert
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum BlendMode : Swift.Int, Swift.Codable {
+  case normal
+  case multiply
+  case screen
+  case overlay
+  case darken
+  case lighten
+  case colorDodge
+  case colorBurn
+  case hardLight
+  case softLight
+  case difference
+  case exclusion
+  case hue
+  case saturation
+  case color
+  case luminosity
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct TextPreferences {
+  public var font: JawwyGamification.SFWFont
+  public var textColorType: JawwyGamification.SFWConfiguration.ColorType
+  public var horizontalOffset: CoreFoundation.CGFloat
+  public var verticalOffset: CoreFoundation.CGFloat
+  public var flipUpsideDown: Swift.Bool
+  public var isCurved: Swift.Bool
+  public var orientation: JawwyGamification.TextPreferences.Orientation
+  public var lineBreakMode: JawwyGamification.TextPreferences.LineBreakMode
+  public var numberOfLines: Swift.Int
+  public var spacing: CoreFoundation.CGFloat
+  public var alignment: UIKit.NSTextAlignment
+  public var maxWidth: CoreFoundation.CGFloat
+  public init(textColorType: JawwyGamification.SFWConfiguration.ColorType, font: JawwyGamification.SFWFont, verticalOffset: CoreFoundation.CGFloat = 0)
+}
+extension JawwyGamification.TextPreferences {
+  public enum Orientation {
+    case horizontal
+    case vertical
+    public static func == (a: JawwyGamification.TextPreferences.Orientation, b: JawwyGamification.TextPreferences.Orientation) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension JawwyGamification.TextPreferences {
+  public enum LineBreakMode {
+    case clip
+    case truncateTail
+    case wordWrap
+    case characterWrap
+    public static func == (a: JawwyGamification.TextPreferences.LineBreakMode, b: JawwyGamification.TextPreferences.LineBreakMode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension JawwyGamification.IQKeyboardManager {
+  @objc dynamic public var enableDebugging: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc dynamic public func registerAllNotifications()
+  @objc dynamic public func unregisterAllNotifications()
+}
+public struct AudioFile {
+  public init(filename: Swift.String, extensionName: Swift.String, bundle: Foundation.Bundle? = nil)
+  public init(url: Foundation.URL)
+}
+@objc final public class CompatibleAnimationKeypath : ObjectiveC.NSObject {
+  @objc public init(keypath: Swift.String)
+  @objc public init(keys: [Swift.String])
+  final public let animationKeypath: JawwyGamification.AnimationKeypath
+  @objc deinit
+}
+extension JawwyGamification.Animation {
+  public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, animationCache: (any JawwyGamification.AnimationCacheProvider)? = nil) -> JawwyGamification.Animation?
+  public static func filepath(_ filepath: Swift.String, animationCache: (any JawwyGamification.AnimationCacheProvider)? = nil) -> JawwyGamification.Animation?
+  public typealias DownloadClosure = (JawwyGamification.Animation?) -> Swift.Void
+  public static func loadedFrom(url: Foundation.URL, closure: @escaping JawwyGamification.Animation.DownloadClosure, animationCache: (any JawwyGamification.AnimationCacheProvider)?)
+  final public func progressTime(forMarker named: Swift.String) -> JawwyGamification.AnimationProgressTime?
+  final public func frameTime(forMarker named: Swift.String) -> JawwyGamification.AnimationFrameTime?
+  final public func progressTime(forFrame frameTime: JawwyGamification.AnimationFrameTime) -> JawwyGamification.AnimationProgressTime
+  final public func frameTime(forProgress progressTime: JawwyGamification.AnimationProgressTime) -> JawwyGamification.AnimationFrameTime
+  final public func time(forFrame frameTime: JawwyGamification.AnimationFrameTime) -> Foundation.TimeInterval
+  final public func frameTime(forTime time: Foundation.TimeInterval) -> JawwyGamification.AnimationFrameTime
+  final public var duration: Foundation.TimeInterval {
+    get
+  }
+  final public var bounds: CoreFoundation.CGRect {
+    get
+  }
+  final public var size: CoreFoundation.CGSize {
+    get
+  }
+}
+public struct SFGradientColor {
+  public var colors: [JawwyGamification.SFWColor]
+  public var colorLocations: [CoreFoundation.CGFloat]
+  public var type: JawwyGamification.SFGradientColor.GradientType
+  public var direction: JawwyGamification.SFGradientColor.Direction
+  public init(colors: [JawwyGamification.SFWColor], colorLocations: [CoreFoundation.CGFloat], type: JawwyGamification.SFGradientColor.GradientType, direction: JawwyGamification.SFGradientColor.Direction = .vertical)
+}
+extension JawwyGamification.SFGradientColor {
+  public enum GradientType {
+    case linear
+    case radial
+    public static func == (a: JawwyGamification.SFGradientColor.GradientType, b: JawwyGamification.SFGradientColor.GradientType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension JawwyGamification.SFGradientColor {
+  public enum Direction {
+    case vertical
+    case horizontal
+    public static func == (a: JawwyGamification.SFGradientColor.Direction, b: JawwyGamification.SFGradientColor.Direction) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension JawwyGamification.SFGradientColor {
+  public var gradient: CoreGraphics.CGGradient? {
+    get
+  }
+}
+public struct SFWConfiguration {
+  public var spinButtonPreferences: JawwyGamification.SFWConfiguration.SpinButtonPreferences?
+  public var pinPreferences: JawwyGamification.SFWConfiguration.PinImageViewPreferences?
+  public var wheelPreferences: JawwyGamification.SFWConfiguration.WheelPreferences
+  public init(wheelPreferences: JawwyGamification.SFWConfiguration.WheelPreferences, pinPreferences: JawwyGamification.SFWConfiguration.PinImageViewPreferences? = nil, spinButtonPreferences: JawwyGamification.SFWConfiguration.SpinButtonPreferences? = nil)
+}
+extension JawwyGamification.SFWConfiguration {
+  public struct WheelPreferences {
+    public var circlePreferences: JawwyGamification.SFWConfiguration.CirclePreferences
+    public var slicePreferences: JawwyGamification.SFWConfiguration.SlicePreferences
+    public var startPosition: JawwyGamification.SFWConfiguration.Position
+    public var layerInsets: JawwyGamification.SFWEdgeInsets
+    public var contentMargins: JawwyGamification.SFWConfiguration.Margins
+    public var imageAnchor: JawwyGamification.SFWConfiguration.AnchorImage?
+    public var centerImageAnchor: JawwyGamification.SFWConfiguration.AnchorImage?
+    public init(circlePreferences: JawwyGamification.SFWConfiguration.CirclePreferences, slicePreferences: JawwyGamification.SFWConfiguration.SlicePreferences, startPosition: JawwyGamification.SFWConfiguration.Position)
+  }
+}
+extension JawwyGamification.SFWConfiguration {
+  public struct CirclePreferences {
+    public var strokeWidth: CoreFoundation.CGFloat
+    public var strokeColor: JawwyGamification.SFWColor
+    public init(strokeWidth: CoreFoundation.CGFloat = 1, strokeColor: JawwyGamification.SFWColor = .black)
+  }
+}
+extension JawwyGamification.SFWConfiguration {
+  public struct SlicePreferences {
+    public var backgroundColorType: JawwyGamification.SFWConfiguration.ColorType
+    public var strokeWidth: CoreFoundation.CGFloat
+    public var strokeColor: JawwyGamification.SFWColor
+    public var backgroundImageContentMode: JawwyGamification.SFWConfiguration.ContentMode
+    public init(backgroundColorType: JawwyGamification.SFWConfiguration.ColorType, strokeWidth: CoreFoundation.CGFloat = 1, strokeColor: JawwyGamification.SFWColor = .black)
+  }
+}
+extension JawwyGamification.SFWConfiguration {
+  public struct SpinButtonPreferences {
+    public var size: CoreFoundation.CGSize
+    public var cornerRadius: CoreFoundation.CGFloat
+    public var cornerWidth: CoreFoundation.CGFloat
+    public var cornerColor: JawwyGamification.SFWColor
+    public var horizontalOffset: CoreFoundation.CGFloat
+    public var verticalOffset: CoreFoundation.CGFloat
+    public var backgroundColor: JawwyGamification.SFWColor
+    public var textColor: JawwyGamification.SFWColor
+    public var disabledTextColor: JawwyGamification.SFWColor
+    public var font: JawwyGamification.SFWFont
+    public init(size: CoreFoundation.CGSize, horizontalOffset: CoreFoundation.CGFloat = 0, verticalOffset: CoreFoundation.CGFloat = 0)
+  }
+}
+extension JawwyGamification.SFWConfiguration {
+  public struct PinImageViewPreferences {
+    public var size: CoreFoundation.CGSize
+    public var position: JawwyGamification.SFWConfiguration.Position
+    public var horizontalOffset: CoreFoundation.CGFloat
+    public var verticalOffset: CoreFoundation.CGFloat
+    public var backgroundColor: JawwyGamification.SFWColor
+    public var tintColor: JawwyGamification.SFWColor?
+    public init(size: CoreFoundation.CGSize, position: JawwyGamification.SFWConfiguration.Position, horizontalOffset: CoreFoundation.CGFloat = 0, verticalOffset: CoreFoundation.CGFloat = 0)
+  }
+}
+extension JawwyGamification.SFWConfiguration {
+  public enum Position {
+    case top
+    case bottom
+    case left
+    case right
+    public static func == (a: JawwyGamification.SFWConfiguration.Position, b: JawwyGamification.SFWConfiguration.Position) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension JawwyGamification.SFWConfiguration {
+  public struct Margins {
+    public init()
+    public init(top: CoreFoundation.CGFloat, left: CoreFoundation.CGFloat, right: CoreFoundation.CGFloat, bottom: CoreFoundation.CGFloat = 0)
+  }
+}
+extension JawwyGamification.SFWConfiguration {
+  public enum ColorType {
+    case evenOddColors(evenColor: JawwyGamification.SFWColor, oddColor: JawwyGamification.SFWColor)
+    case customPatternColors(colors: [JawwyGamification.SFWColor]?, defaultColor: JawwyGamification.SFWColor)
+  }
+}
+extension JawwyGamification.SFWConfiguration {
+  public struct AnchorImage {
+    public var size: CoreFoundation.CGSize
+    public var imageName: Swift.String
+    public var rotationDegreeOffset: CoreFoundation.CGFloat
+    public var verticalOffset: CoreFoundation.CGFloat
+    public var tintColor: JawwyGamification.SFWColor?
+    public init(imageName: Swift.String, size: CoreFoundation.CGSize, verticalOffset: CoreFoundation.CGFloat = 0)
+  }
+}
+extension JawwyGamification.SFWConfiguration {
+  public enum ContentMode {
+    case scaleAspectFill
+    case bottom
+    public static func == (a: JawwyGamification.SFWConfiguration.ContentMode, b: JawwyGamification.SFWConfiguration.ContentMode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class IQTextView : UIKit.UITextView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func awakeFromNib()
+  @objc deinit
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var placeholderTextColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var placeholder: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var attributedPlaceholder: Foundation.NSAttributedString? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var text: Swift.String! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var attributedText: Foundation.NSAttributedString! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var font: UIKit.UIFont? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var textAlignment: UIKit.NSTextAlignment {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override weak dynamic open var delegate: (any UIKit.UITextViewDelegate)? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+}
+public struct AnimationKeypath {
+  public init(keypath: Swift.String)
+  public init(keys: [Swift.String])
+}
+public let kIQUseDefaultKeyboardDistance: CoreFoundation.CGFloat
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var keyboardDistanceFromTextField: CoreFoundation.CGFloat {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var ignoreSwitchingByNextPrevious: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var enableMode: JawwyGamification.IQEnableMode {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldResignOnTouchOutsideMode: JawwyGamification.IQEnableMode {
+    @objc get
+    @objc set(newValue)
+  }
+}
+public protocol AnimationFontProvider {
+  func fontFor(family: Swift.String, size: CoreFoundation.CGFloat) -> CoreText.CTFont?
+}
+final public class DefaultFontProvider : JawwyGamification.AnimationFontProvider {
+  final public func fontFor(family: Swift.String, size: CoreFoundation.CGFloat) -> CoreText.CTFont?
+  public init()
+  @objc deinit
+}
+@objc public class IQInvocation : ObjectiveC.NSObject {
+  @objc weak public var target: Swift.AnyObject?
+  @objc public var action: ObjectiveC.Selector
+  @objc public init(_ target: Swift.AnyObject, _ action: ObjectiveC.Selector)
+  @objc public func invoke(from: Any)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AnimationSubview : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension JawwyGamification.IQKeyboardManager {
+  @objc dynamic public func reloadInputViews()
+}
+extension JawwyGamification.IQKeyboardManager {
+  @objc dynamic public var canGoPrevious: Swift.Bool {
+    @objc get
+  }
+  @objc dynamic public var canGoNext: Swift.Bool {
+    @objc get
+  }
+  @discardableResult
+  @objc dynamic public func goPrevious() -> Swift.Bool
+  @discardableResult
+  @objc dynamic public func goNext() -> Swift.Bool
+}
+public protocol AnyValueProvider {
+  var valueType: any Any.Type { get }
+  func hasUpdate(frame: JawwyGamification.AnimationFrameTime) -> Swift.Bool
+  func value(frame: JawwyGamification.AnimationFrameTime) -> Any
+}
+public protocol AnimationTextProvider : AnyObject {
+  func textFor(keypathName: Swift.String, sourceText: Swift.String) -> Swift.String
+}
+final public class DictionaryTextProvider : JawwyGamification.AnimationTextProvider {
+  public init(_ values: [Swift.String : Swift.String])
+  final public func textFor(keypathName: Swift.String, sourceText: Swift.String) -> Swift.String
+  @objc deinit
+}
+final public class DefaultTextProvider : JawwyGamification.AnimationTextProvider {
+  final public func textFor(keypathName: Swift.String, sourceText: Swift.String) -> Swift.String
+  public init()
+  @objc deinit
+}
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func viewContainingController() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func topMostController() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func parentContainerViewController() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func superviewOfClassType(_ classType: UIKit.UIView.Type, belowView: UIKit.UIView? = nil) -> UIKit.UIView?
+}
+public struct Vector1D {
+  public init(_ value: Swift.Double)
+  public let value: Swift.Double
+}
+public struct Vector3D {
+  public let x: Swift.Double
+  public let y: Swift.Double
+  public let z: Swift.Double
+  public init(x: Swift.Double, y: Swift.Double, z: Swift.Double)
+}
+public typealias SFWControl = UIKit.UIControl
+public typealias SFWColor = UIKit.UIColor
+public typealias SFWImage = UIKit.UIImage
+public typealias SFWFont = UIKit.UIFont
+public typealias SFWEdgeInsets = UIKit.UIEdgeInsets
+@objc @_Concurrency.MainActor(unsafe) public class SwiftFortuneWheel : JawwyGamification.SFWControl {
+  @_Concurrency.MainActor(unsafe) public var onSpinButtonTap: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var onEdgeCollision: ((_ progress: Swift.Double?) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var onCenterCollision: ((_ progress: Swift.Double?) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var onWheelTap: ((_ index: Swift.Int) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var wheelTapGestureOn: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var impactFeedbackOn: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var edgeCollisionDetectionOn: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var centerCollisionDetectionOn: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var edgeCollisionSound: JawwyGamification.AudioFile? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var centerCollisionSound: JawwyGamification.AudioFile? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var pinImageViewCollisionEffect: JawwyGamification.CollisionEffect?
+  @_Concurrency.MainActor(unsafe) public var configuration: JawwyGamification.SFWConfiguration? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var slices: [JawwyGamification.Slice] {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, slices: [JawwyGamification.Slice], configuration: JawwyGamification.SFWConfiguration?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+extension JawwyGamification.SwiftFortuneWheel {
+  @_Concurrency.MainActor(unsafe) public func rotate(toIndex index: Swift.Int, animationDuration: CoreFoundation.CFTimeInterval = 0.00001)
+  @_Concurrency.MainActor(unsafe) public func rotate(rotationOffset: CoreFoundation.CGFloat, animationDuration: CoreFoundation.CFTimeInterval = 0.00001)
+  @_Concurrency.MainActor(unsafe) public func startRotationAnimation(rotationOffset: CoreFoundation.CGFloat, fullRotationsCount: Swift.Int = 13, animationDuration: CoreFoundation.CFTimeInterval = 5.000, _ completion: ((Swift.Bool) -> Swift.Void)?)
+  @_Concurrency.MainActor(unsafe) public func startRotationAnimation(finishIndex: Swift.Int, fullRotationsCount: Swift.Int = 13, animationDuration: CoreFoundation.CFTimeInterval = 5.000, _ completion: ((Swift.Bool) -> Swift.Void)?)
+  @_Concurrency.MainActor(unsafe) public func startRotationAnimation(finishIndex: Swift.Int, continuousRotationTime: Swift.Int, continuousRotationSpeed: CoreFoundation.CGFloat = 4, _ completion: ((Swift.Bool) -> Swift.Void)?)
+  @_Concurrency.MainActor(unsafe) public func startRotationAnimation(finishIndex: Swift.Int, continuousRotationTime: Swift.Int, continuousRotationSpeed: CoreFoundation.CGFloat = 4, rotationOffset: CoreFoundation.CGFloat = 0, _ completion: ((Swift.Bool) -> Swift.Void)?)
+  @_Concurrency.MainActor(unsafe) public func startContinuousRotationAnimation(with speed: CoreFoundation.CGFloat = 4)
+  @_Concurrency.MainActor(unsafe) public func stopRotation()
+  @_Concurrency.MainActor(unsafe) public func startRotationAnimation(finishIndex: Swift.Int, rotationOffset: CoreFoundation.CGFloat, fullRotationsCount: Swift.Int = 13, animationDuration: CoreFoundation.CFTimeInterval = 5.000, _ completion: ((Swift.Bool) -> Swift.Void)?)
+}
+extension JawwyGamification.SwiftFortuneWheel {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var pinImage: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var isPinHidden: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var spinImage: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var spinBackgroundImage: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var spinTitle: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var isSpinHidden: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var isSpinEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
+extension JawwyGamification.SwiftFortuneWheel {
+  @available(*, deprecated, message: "Use startContinuousRotationAnimation(with: speed) instead")
+  @_Concurrency.MainActor(unsafe) public func startAnimating(rotationTime: CoreFoundation.CFTimeInterval = 5.000, fullRotationCountInRotationTime: CoreFoundation.CGFloat = 7000)
+  @available(*, deprecated, renamed: "stopRotation")
+  @_Concurrency.MainActor(unsafe) public func stopAnimating()
+  @available(*, deprecated, message: "Use startRotationAnimation(finishIndex:continuousRotationTime:completion:) instead")
+  @_Concurrency.MainActor(unsafe) public func startAnimating(indefiniteRotationTimeInSeconds: Swift.Int, finishIndex: Swift.Int, _ completion: ((Swift.Bool) -> Swift.Void)?)
+  @available(*, deprecated, renamed: "startRotationAnimation(finishIndex:rotationOffset:fullRotationsCount:animationDuration:completion:)")
+  @_Concurrency.MainActor(unsafe) public func startAnimating(finishIndex: Swift.Int, rotationOffset: CoreFoundation.CGFloat, fullRotationsUntilFinish: Swift.Int = 13, animationDuration: CoreFoundation.CFTimeInterval = 5.000, _ completion: ((Swift.Bool) -> Swift.Void)?)
+  @available(*, deprecated, renamed: "startRotationAnimation(rotationOffset:fullRotationsCount:animationDuration:completion:)")
+  @_Concurrency.MainActor(unsafe) public func startAnimating(rotationOffset: CoreFoundation.CGFloat, fullRotationsUntilFinish: Swift.Int = 13, animationDuration: CoreFoundation.CFTimeInterval = 5.000, _ completion: ((Swift.Bool) -> Swift.Void)?)
+  @available(*, deprecated, renamed: "startRotationAnimation(finishIndex:fullRotationsCount:animationDuration:completion:)")
+  @_Concurrency.MainActor(unsafe) public func startAnimating(finishIndex: Swift.Int, fullRotationsUntilFinish: Swift.Int = 13, animationDuration: CoreFoundation.CFTimeInterval = 5.000, _ completion: ((Swift.Bool) -> Swift.Void)?)
+}
+public protocol AnimationCacheProvider {
+  func animation(forKey: Swift.String) -> JawwyGamification.Animation?
+  func setAnimation(_ animation: JawwyGamification.Animation, forKey: Swift.String)
+  func clearCache()
+}
+final public class ColorValueProvider : JawwyGamification.AnyValueProvider {
+  public typealias ColorValueBlock = (CoreFoundation.CGFloat) -> JawwyGamification.Color
+  final public var color: JawwyGamification.Color {
+    get
+    set
+  }
+  public init(block: @escaping JawwyGamification.ColorValueProvider.ColorValueBlock)
+  public init(_ color: JawwyGamification.Color)
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
+  @objc deinit
+}
+extension UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+}
+infix operator +| : DefaultPrecedence
+infix operator +- : DefaultPrecedence
+@objc final public class CompatibleAnimation : ObjectiveC.NSObject {
+  @objc public init(name: Swift.String, bundle: Foundation.Bundle = Bundle.main)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class CompatibleAnimationView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @objc @_Concurrency.MainActor(unsafe) final public var compatibleAnimation: JawwyGamification.CompatibleAnimation? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var loopAnimationCount: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var contentMode: UIKit.UIView.ContentMode {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var shouldRasterizeWhenIdle: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var currentProgress: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var currentTime: Foundation.TimeInterval {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var currentFrame: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var realtimeAnimationFrame: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var realtimeAnimationProgress: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var animationSpeed: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var respectAnimationFrameRate: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var isAnimationPlaying: Swift.Bool {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public func play()
+  @objc @_Concurrency.MainActor(unsafe) final public func play(completion: ((Swift.Bool) -> Swift.Void)?)
+  @objc @_Concurrency.MainActor(unsafe) final public func play(fromProgress: CoreFoundation.CGFloat, toProgress: CoreFoundation.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) final public func play(fromFrame: CoreFoundation.CGFloat, toFrame: CoreFoundation.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) final public func play(fromMarker: Swift.String, toMarker: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) final public func stop()
+  @objc @_Concurrency.MainActor(unsafe) final public func pause()
+  @objc @_Concurrency.MainActor(unsafe) final public func reloadImages()
+  @objc @_Concurrency.MainActor(unsafe) final public func forceDisplayUpdate()
+  @objc @_Concurrency.MainActor(unsafe) final public func getValue(for keypath: JawwyGamification.CompatibleAnimationKeypath, atFrame: CoreFoundation.CGFloat) -> Any?
+  @objc @_Concurrency.MainActor(unsafe) final public func logHierarchyKeypaths()
+  @objc @_Concurrency.MainActor(unsafe) final public func setColorValue(_ color: UIKit.UIColor, forKeypath keypath: JawwyGamification.CompatibleAnimationKeypath)
+  @objc @_Concurrency.MainActor(unsafe) final public func getColorValue(for keypath: JawwyGamification.CompatibleAnimationKeypath, atFrame: CoreFoundation.CGFloat) -> UIKit.UIColor?
+  @objc @_Concurrency.MainActor(unsafe) final public func addSubview(_ subview: JawwyGamification.AnimationSubview, forLayerAt keypath: JawwyGamification.CompatibleAnimationKeypath)
+  @objc @_Concurrency.MainActor(unsafe) final public func convert(rect: CoreFoundation.CGRect, toLayerAt keypath: JawwyGamification.CompatibleAnimationKeypath?) -> CoreFoundation.CGRect
+  @objc @_Concurrency.MainActor(unsafe) final public func convert(point: CoreFoundation.CGPoint, toLayerAt keypath: JawwyGamification.CompatibleAnimationKeypath?) -> CoreFoundation.CGPoint
+  @objc @_Concurrency.MainActor(unsafe) final public func progressTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) final public func frameTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
+  @objc deinit
+}
+final public class SizeValueProvider : JawwyGamification.AnyValueProvider {
+  public typealias SizeValueBlock = (CoreFoundation.CGFloat) -> CoreFoundation.CGSize
+  final public var size: CoreFoundation.CGSize {
+    get
+    set
+  }
+  public init(block: @escaping JawwyGamification.SizeValueProvider.SizeValueBlock)
+  public init(_ size: CoreFoundation.CGSize)
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
+  @objc deinit
+}
+public struct ImagePreferences {
+  public var preferredSize: CoreFoundation.CGSize
+  public var horizontalOffset: CoreFoundation.CGFloat
+  public var verticalOffset: CoreFoundation.CGFloat
+  public var flipUpsideDown: Swift.Bool
+  public var backgroundColor: JawwyGamification.SFWColor?
+  public var tintColor: JawwyGamification.SFWColor?
+  public init(preferredSize: CoreFoundation.CGSize, verticalOffset: CoreFoundation.CGFloat = 0)
+}
+extension JawwyGamification.Vector1D : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension JawwyGamification.Vector3D : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension JawwyGamification.Vector3D {
+  public var pointValue: CoreFoundation.CGPoint {
+    get
+  }
+  public var sizeValue: CoreFoundation.CGSize {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AnimatedSwitch : JawwyGamification.AnimatedControl {
+  public enum CancelBehavior {
+    case reverse
+    case none
+    public static func == (a: JawwyGamification.AnimatedSwitch.CancelBehavior, b: JawwyGamification.AnimatedSwitch.CancelBehavior) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) final public var isOn: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var cancelBehavior: JawwyGamification.AnimatedSwitch.CancelBehavior
+  @_Concurrency.MainActor(unsafe) final public func setIsOn(_ isOn: Swift.Bool, animated: Swift.Bool, shouldFireHaptics: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) final public func setProgressForState(fromProgress: JawwyGamification.AnimationProgressTime, toProgress: JawwyGamification.AnimationProgressTime, forOnState: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) override public init(animation: JawwyGamification.Animation)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override final public func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) override final public func animationDidSet()
+  @objc deinit
+}
+public class LRUAnimationCache : JawwyGamification.AnimationCacheProvider {
+  public init()
+  public func clearCache()
+  public static let sharedCache: JawwyGamification.LRUAnimationCache
+  public var cacheSize: Swift.Int
+  public func animation(forKey: Swift.String) -> JawwyGamification.Animation?
+  public func setAnimation(_ animation: JawwyGamification.Animation, forKey: Swift.String)
+  @objc deinit
+}
+public typealias SoundIdentifier = Swift.String
+final public class FloatValueProvider : JawwyGamification.AnyValueProvider {
+  public typealias CGFloatValueBlock = (CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
+  final public var float: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  public init(block: @escaping JawwyGamification.FloatValueProvider.CGFloatValueBlock)
+  public init(_ float: CoreFoundation.CGFloat)
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) public class IQPreviousNextView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class IQKeyboardReturnKeyHandler : ObjectiveC.NSObject {
+  @objc weak public var delegate: (any UIKit.UITextFieldDelegate & UIKit.UITextViewDelegate)?
+  @objc public var lastTextFieldReturnKeyType: UIKit.UIReturnKeyType {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(controller: UIKit.UIViewController)
+  @objc deinit
+  @objc public func addTextFieldView(_ view: UIKit.UIView)
+  @objc public func removeTextFieldView(_ view: UIKit.UIView)
+  @objc public func addResponderFromView(_ view: UIKit.UIView)
+  @objc public func removeResponderFromView(_ view: UIKit.UIView)
+}
+extension JawwyGamification.IQKeyboardReturnKeyHandler : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @available(iOS 10.0, *)
+  public typealias UITextFieldDidEndEditingReason = UIKit.UITextField.DidEndEditingReason
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidEndEditing(_ textField: UIKit.UITextField, reason: JawwyGamification.IQKeyboardReturnKeyHandler.UITextFieldDidEndEditingReason)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+}
+extension JawwyGamification.IQKeyboardReturnKeyHandler : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewShouldBeginEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewShouldEndEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChangeSelection(_ textView: UIKit.UITextView)
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith textAttachment: UIKit.NSTextAttachment, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+  @available(iOS, deprecated: 10.0)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange) -> Swift.Bool
+  @available(iOS, deprecated: 10.0)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith textAttachment: UIKit.NSTextAttachment, in characterRange: Foundation.NSRange) -> Swift.Bool
+}
+@objc extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func parentIQContainerViewController() -> UIKit.UIViewController?
+  @objc @available(*, deprecated, message: "Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.")
+  @IBOutlet @_Concurrency.MainActor(unsafe) dynamic public var IQLayoutGuideConstraint: UIKit.NSLayoutConstraint? {
+    @objc get
+    @objc set(newValue)
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class ImageAsset : JawwyGamification.Asset {
+  final public let name: Swift.String
+  final public let directory: Swift.String
+  final public let width: Swift.Double
+  final public let height: Swift.Double
+  override final public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+public class FilepathImageProvider : JawwyGamification.AnimationImageProvider {
+  public init(filepath: Swift.String)
+  public init(filepath: Foundation.URL)
+  public func imageForAsset(asset: JawwyGamification.ImageAsset) -> CoreGraphics.CGImage?
+  @objc deinit
+}
+final public class PointValueProvider : JawwyGamification.AnyValueProvider {
+  public typealias PointValueBlock = (CoreFoundation.CGFloat) -> CoreFoundation.CGPoint
+  final public var point: CoreFoundation.CGPoint {
+    get
+    set
+  }
+  public init(block: @escaping JawwyGamification.PointValueProvider.PointValueBlock)
+  public init(_ point: CoreFoundation.CGPoint)
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
+  @objc deinit
+}
+public class Asset : Swift.Codable {
+  final public let id: Swift.String
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class IQKeyboardManager : ObjectiveC.NSObject {
+  @objc public static let shared: JawwyGamification.IQKeyboardManager
+  @objc public var enable: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var keyboardDistanceFromTextField: CoreFoundation.CGFloat
+  @objc public var enableAutoToolbar: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var toolbarManageBehaviour: JawwyGamification.IQAutoToolbarManageBehaviour
+  @objc public var shouldToolbarUsesTextFieldTintColor: Swift.Bool
+  @objc public var toolbarTintColor: UIKit.UIColor?
+  @objc public var toolbarBarTintColor: UIKit.UIColor?
+  @objc public var previousNextDisplayMode: JawwyGamification.IQPreviousNextDisplayMode
+  @objc public var toolbarPreviousBarButtonItemImage: UIKit.UIImage?
+  @objc public var toolbarNextBarButtonItemImage: UIKit.UIImage?
+  @objc public var toolbarDoneBarButtonItemImage: UIKit.UIImage?
+  @objc public var toolbarPreviousBarButtonItemText: Swift.String?
+  @objc public var toolbarPreviousBarButtonItemAccessibilityLabel: Swift.String?
+  @objc public var toolbarNextBarButtonItemText: Swift.String?
+  @objc public var toolbarNextBarButtonItemAccessibilityLabel: Swift.String?
+  @objc public var toolbarDoneBarButtonItemText: Swift.String?
+  @objc public var toolbarDoneBarButtonItemAccessibilityLabel: Swift.String?
+  @objc public var shouldShowToolbarPlaceholder: Swift.Bool
+  @objc public var placeholderFont: UIKit.UIFont?
+  @objc public var placeholderColor: UIKit.UIColor?
+  @objc public var placeholderButtonColor: UIKit.UIColor?
+  @objc public var overrideKeyboardAppearance: Swift.Bool
+  @objc public var keyboardAppearance: UIKit.UIKeyboardAppearance
+  @objc public var shouldResignOnTouchOutside: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var resignFirstResponderGesture: UIKit.UITapGestureRecognizer {
+    @objc get
+    @objc set
+  }
+  @discardableResult
+  @objc public func resignFirstResponder() -> Swift.Bool
+  @objc public var shouldPlayInputClicks: Swift.Bool
+  @objc public var layoutIfNeededOnUpdate: Swift.Bool
+  @objc public var disabledDistanceHandlingClasses: [UIKit.UIViewController.Type]
+  @objc public var enabledDistanceHandlingClasses: [UIKit.UIViewController.Type]
+  @objc public var disabledToolbarClasses: [UIKit.UIViewController.Type]
+  @objc public var enabledToolbarClasses: [UIKit.UIViewController.Type]
+  @objc public var toolbarPreviousNextAllowedClasses: [UIKit.UIView.Type]
+  @objc public var disabledTouchResignedClasses: [UIKit.UIViewController.Type]
+  @objc public var enabledTouchResignedClasses: [UIKit.UIViewController.Type]
+  @objc public var touchResignedGestureIgnoreClasses: [UIKit.UIView.Type]
+  @objc public func registerTextFieldViewClass(_ aClass: UIKit.UIView.Type, didBeginEditingNotificationName: Swift.String, didEndEditingNotificationName: Swift.String)
+  @objc public func unregisterTextFieldViewClass(_ aClass: UIKit.UIView.Type, didBeginEditingNotificationName: Swift.String, didEndEditingNotificationName: Swift.String)
+  @objc deinit
+  @objc public func reloadLayoutIfNeeded()
+}
+extension JawwyGamification.IQKeyboardManager : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
+}
+public struct Slice {
+  public var contents: [JawwyGamification.Slice.ContentType]
+  public var backgroundColor: JawwyGamification.SFWColor?
+  public var backgroundImage: JawwyGamification.SFWImage?
+  public var gradientColor: JawwyGamification.SFGradientColor?
+  public init(contents: [JawwyGamification.Slice.ContentType], backgroundColor: JawwyGamification.SFWColor? = nil, gradientColor: JawwyGamification.SFGradientColor? = nil, backgroundImage: JawwyGamification.SFWImage? = nil)
+}
+extension JawwyGamification.Slice {
+  public enum ContentType {
+    case assetImage(name: Swift.String, preferences: JawwyGamification.ImagePreferences)
+    case image(image: JawwyGamification.SFWImage, preferences: JawwyGamification.ImagePreferences)
+    case text(text: Swift.String, preferences: JawwyGamification.TextPreferences)
+    case line(preferences: JawwyGamification.LinePreferences)
+  }
+}
+public enum GameAction {
+  case showRewards
+  case dismissed
+  case back
+  case homeAction
+  case backButton
+  public static func == (a: JawwyGamification.GameAction, b: JawwyGamification.GameAction) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Game {
+  public enum GameNames : Swift.String, Swift.CaseIterable {
+    case SpinNWin
+    case ShakePhoneNWin
+    case PredictNWin
+    case Quiz
+    case SpendNWin
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [JawwyGamification.Game.GameNames]
+    public typealias RawValue = Swift.String
+    public static var allCases: [JawwyGamification.Game.GameNames] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public static func dismissController()
+  public static func open(controller: UIKit.UIViewController, msisdn: Swift.String, language: Swift.String, gameType: Swift.String, complition: ((JawwyGamification.GameAction) -> Swift.Void)?)
+  public static func openGame(controller: UIKit.UIViewController, complition: ((JawwyGamification.GameAction) -> Swift.Void)?)
+  public static func openGameList(controller: UIKit.UIViewController, language: Swift.String, msisdn: Swift.String, baseUrl: Swift.String, token: Swift.String, complition: ((JawwyGamification.GameAction) -> Swift.Void)?)
+  public static func openMilestoneRunner(controller: UIKit.UIViewController, language: Swift.String, msisdn: Swift.String, customerNumber: Swift.String, complition: ((JawwyGamification.GameAction) -> Swift.Void)?)
+  @objc deinit
+}
+public enum LottieBackgroundBehavior {
+  case stop
+  case pause
+  case pauseAndRestore
+  case forceFinish
+  public static func == (a: JawwyGamification.LottieBackgroundBehavior, b: JawwyGamification.LottieBackgroundBehavior) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum LottieLoopMode {
+  case playOnce
+  case loop
+  case autoReverse
+  case `repeat`(Swift.Float)
+  case repeatBackwards(Swift.Float)
+}
+extension JawwyGamification.LottieLoopMode : Swift.Equatable {
+  public static func == (lhs: JawwyGamification.LottieLoopMode, rhs: JawwyGamification.LottieLoopMode) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) final public class AnimationView : JawwyGamification.LottieView {
+  @_Concurrency.MainActor(unsafe) final public var animation: JawwyGamification.Animation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var backgroundBehavior: JawwyGamification.LottieBackgroundBehavior
+  @_Concurrency.MainActor(unsafe) final public var imageProvider: any JawwyGamification.AnimationImageProvider {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var textProvider: any JawwyGamification.AnimationTextProvider {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var fontProvider: any JawwyGamification.AnimationFontProvider {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var isAnimationPlaying: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var isAnimationQueued: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var loopMode: JawwyGamification.LottieLoopMode {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var shouldRasterizeWhenIdle: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var currentProgress: JawwyGamification.AnimationProgressTime {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var currentTime: Foundation.TimeInterval {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var currentFrame: JawwyGamification.AnimationFrameTime {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var realtimeAnimationFrame: JawwyGamification.AnimationFrameTime {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var realtimeAnimationProgress: JawwyGamification.AnimationProgressTime {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var animationSpeed: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var respectAnimationFrameRate: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var viewportFrame: CoreFoundation.CGRect? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public func play(completion: JawwyGamification.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) final public func play(fromProgress: JawwyGamification.AnimationProgressTime? = nil, toProgress: JawwyGamification.AnimationProgressTime, loopMode: JawwyGamification.LottieLoopMode? = nil, completion: JawwyGamification.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) final public func play(fromFrame: JawwyGamification.AnimationFrameTime? = nil, toFrame: JawwyGamification.AnimationFrameTime, loopMode: JawwyGamification.LottieLoopMode? = nil, completion: JawwyGamification.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) final public func play(fromMarker: Swift.String? = nil, toMarker: Swift.String, loopMode: JawwyGamification.LottieLoopMode? = nil, completion: JawwyGamification.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) final public func stop()
+  @_Concurrency.MainActor(unsafe) final public func pause()
+  @_Concurrency.MainActor(unsafe) final public func reloadImages()
+  @_Concurrency.MainActor(unsafe) final public func forceDisplayUpdate()
+  @_Concurrency.MainActor(unsafe) final public func setValueProvider(_ valueProvider: any JawwyGamification.AnyValueProvider, keypath: JawwyGamification.AnimationKeypath)
+  @_Concurrency.MainActor(unsafe) final public func getValue(for keypath: JawwyGamification.AnimationKeypath, atFrame: JawwyGamification.AnimationFrameTime?) -> Any?
+  @_Concurrency.MainActor(unsafe) final public func logHierarchyKeypaths()
+  @_Concurrency.MainActor(unsafe) final public func addSubview(_ subview: JawwyGamification.AnimationSubview, forLayerAt keypath: JawwyGamification.AnimationKeypath)
+  @_Concurrency.MainActor(unsafe) final public func convert(_ rect: CoreFoundation.CGRect, toLayerAt keypath: JawwyGamification.AnimationKeypath?) -> CoreFoundation.CGRect?
+  @_Concurrency.MainActor(unsafe) final public func convert(_ point: CoreFoundation.CGPoint, toLayerAt keypath: JawwyGamification.AnimationKeypath?) -> CoreFoundation.CGPoint?
+  @_Concurrency.MainActor(unsafe) final public func setNodeIsEnabled(isEnabled: Swift.Bool, keypath: JawwyGamification.AnimationKeypath)
+  @_Concurrency.MainActor(unsafe) final public func progressTime(forMarker named: Swift.String) -> JawwyGamification.AnimationProgressTime?
+  @_Concurrency.MainActor(unsafe) final public func frameTime(forMarker named: Swift.String) -> JawwyGamification.AnimationFrameTime?
+  @_Concurrency.MainActor(unsafe) public init(animation: JawwyGamification.Animation?, imageProvider: (any JawwyGamification.AnimationImageProvider)? = nil, textProvider: any JawwyGamification.AnimationTextProvider = DefaultTextProvider(), fontProvider: any JawwyGamification.AnimationFontProvider = DefaultFontProvider())
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class LottieView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didMoveToWindow()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var contentMode: UIKit.UIView.ContentMode {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public typealias AnimationFrameTime = CoreFoundation.CGFloat
+public typealias AnimationProgressTime = CoreFoundation.CGFloat
+public protocol AnimationImageProvider {
+  func imageForAsset(asset: JawwyGamification.ImageAsset) -> CoreGraphics.CGImage?
+}
+@objc extension UIKit.UIScrollView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldIgnoreScrollingAdjustment: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldIgnoreContentInsetAdjustment: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldRestoreScrollViewContentOffset: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+}
+public class BundleImageProvider : JawwyGamification.AnimationImageProvider {
+  public init(bundle: Foundation.Bundle, searchPath: Swift.String?)
+  public func imageForAsset(asset: JawwyGamification.ImageAsset) -> CoreGraphics.CGImage?
+  @objc deinit
+}
+extension UIKit.UIColor {
+  public class func uiColor(from rgbValue: Swift.UInt, alpha: CoreFoundation.CGFloat = 1.0) -> UIKit.UIColor
+}
+extension UIKit.UIImage {
+  public class func gifImageWithData(_ data: Foundation.Data) -> UIKit.UIImage?
+  public class func gifImageWithURL(_ gifUrl: Swift.String) -> UIKit.UIImage?
+  public class func gifImageWithName(_ name: Swift.String) -> UIKit.UIImage?
+}
+extension JawwyGamification.ColorFormatDenominator : Swift.Equatable {}
+extension JawwyGamification.ColorFormatDenominator : Swift.Hashable {}
+extension JawwyGamification.IQAutoToolbarManageBehaviour : Swift.Equatable {}
+extension JawwyGamification.IQAutoToolbarManageBehaviour : Swift.Hashable {}
+extension JawwyGamification.IQAutoToolbarManageBehaviour : Swift.RawRepresentable {}
+extension JawwyGamification.IQPreviousNextDisplayMode : Swift.Equatable {}
+extension JawwyGamification.IQPreviousNextDisplayMode : Swift.Hashable {}
+extension JawwyGamification.IQPreviousNextDisplayMode : Swift.RawRepresentable {}
+extension JawwyGamification.IQEnableMode : Swift.Equatable {}
+extension JawwyGamification.IQEnableMode : Swift.Hashable {}
+extension JawwyGamification.IQEnableMode : Swift.RawRepresentable {}
+extension JawwyGamification.CoordinateSpace : Swift.Equatable {}
+extension JawwyGamification.CoordinateSpace : Swift.Hashable {}
+extension JawwyGamification.CoordinateSpace : Swift.RawRepresentable {}
+extension JawwyGamification.GamesList : Swift.Equatable {}
+extension JawwyGamification.GamesList : Swift.Hashable {}
+extension JawwyGamification.CellType : Swift.Equatable {}
+extension JawwyGamification.CellType : Swift.Hashable {}
+extension JawwyGamification.RewardCellType : Swift.Equatable {}
+extension JawwyGamification.RewardCellType : Swift.Hashable {}
+extension JawwyGamification.EventCellType : Swift.Equatable {}
+extension JawwyGamification.EventCellType : Swift.Hashable {}
+extension JawwyGamification.LayerType : Swift.Equatable {}
+extension JawwyGamification.LayerType : Swift.Hashable {}
+extension JawwyGamification.LayerType : Swift.RawRepresentable {}
+extension JawwyGamification.MatteType : Swift.Equatable {}
+extension JawwyGamification.MatteType : Swift.Hashable {}
+extension JawwyGamification.MatteType : Swift.RawRepresentable {}
+extension JawwyGamification.BlendMode : Swift.Equatable {}
+extension JawwyGamification.BlendMode : Swift.Hashable {}
+extension JawwyGamification.BlendMode : Swift.RawRepresentable {}
+extension JawwyGamification.TextPreferences.Orientation : Swift.Equatable {}
+extension JawwyGamification.TextPreferences.Orientation : Swift.Hashable {}
+extension JawwyGamification.TextPreferences.LineBreakMode : Swift.Equatable {}
+extension JawwyGamification.TextPreferences.LineBreakMode : Swift.Hashable {}
+extension JawwyGamification.SFGradientColor.GradientType : Swift.Equatable {}
+extension JawwyGamification.SFGradientColor.GradientType : Swift.Hashable {}
+extension JawwyGamification.SFGradientColor.Direction : Swift.Equatable {}
+extension JawwyGamification.SFGradientColor.Direction : Swift.Hashable {}
+extension JawwyGamification.SFWConfiguration.Position : Swift.Equatable {}
+extension JawwyGamification.SFWConfiguration.Position : Swift.Hashable {}
+extension JawwyGamification.SFWConfiguration.ContentMode : Swift.Equatable {}
+extension JawwyGamification.SFWConfiguration.ContentMode : Swift.Hashable {}
+extension JawwyGamification.AnimatedSwitch.CancelBehavior : Swift.Equatable {}
+extension JawwyGamification.AnimatedSwitch.CancelBehavior : Swift.Hashable {}
+extension JawwyGamification.GameAction : Swift.Equatable {}
+extension JawwyGamification.GameAction : Swift.Hashable {}
+extension JawwyGamification.Game.GameNames : Swift.Equatable {}
+extension JawwyGamification.Game.GameNames : Swift.Hashable {}
+extension JawwyGamification.Game.GameNames : Swift.RawRepresentable {}
+extension JawwyGamification.LottieBackgroundBehavior : Swift.Equatable {}
+extension JawwyGamification.LottieBackgroundBehavior : Swift.Hashable {}

@@ -1,0 +1,11 @@
+framework module JawwyGamification {
+  umbrella header "JawwyGamification.h"
+
+  export *
+  module * { export * }
+}
+
+module JawwyGamification.Swift {
+  header "JawwyGamification-Swift.h"
+  requires objc
+}

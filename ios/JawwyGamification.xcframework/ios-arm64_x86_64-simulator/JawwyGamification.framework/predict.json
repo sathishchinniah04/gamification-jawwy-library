@@ -1,0 +1,80 @@
+{
+    "requestId": "889080",
+    "timestamp": "20231229070932",
+    "respCode": "SC0000",
+    "respDesc": "SUCCESS",
+    "predictionList": [
+        {
+            "eventList": [
+                {
+                    "eventid": 1,
+                    "numberOfquestions": 0,
+                    "eventName": "FootBall Worldcup Match",
+                    "eventImageCard": "https://i.postimg.cc/76hKRmKJ/New-Year.jpg",
+                    "category": "FootBall",
+                    "categoryId": 1,
+                    "additionalData": [
+                        {
+                            "key": "PREDICTION_WON",
+                            "value": "false"
+                        }
+                        ],
+                    "matchList": [
+                        {
+                            "matchId": 1,
+                            "matchName": "Mumbai Indians v/s Chennai Super Kings",
+                            "backGroundImage": "https://i.postimg.cc/76hKRmKJ/New-Year.jpg",
+                            "predictionStartTime": "28-12-23 11:30:00",
+                            "predictionEndTime": "30-12-23 10:30:00",
+                            "matchStartTime": "30-12-23 13:30:00",
+                            "opponentA": "Mumbai Indians",
+                            "opponentB": "Chennai Super kings",
+                            "imageCardOppenentA": "https://i.postimg.cc/HJGBGGHq/image.jpg",
+                            "imageCardOppenentB": "https://i.postimg.cc/HJGBGGHq/image.jpg",
+                            "questionList": [
+                                {
+                                    "question": "Predict the winner",
+                                    "questionId": 1,
+                                    "predOptions": [
+                                        {
+                                            "id": 1,
+                                            "text": "Mumbai Indians",
+                                            "image": "https://i.postimg.cc/HJGBGGHq/image.jpg",
+                                            "imageCardOppenentA": "https://i.postimg.cc/HJGBGGHq/image.jpg",
+                                            "predictedPercentage": 0,
+                                            "additionalData": [
+                                                {
+                                                    "key": "PREDICTION_SUBMITTED",
+                                                    "value": "false"
+                                                }
+                                                ]
+                                        },
+                                        {
+                                            "id": 2,
+                                            "text": "Chennai Super kings",
+                                            "image": "https://i.postimg.cc/HJGBGGHq/image.jpg",
+                                            "imageCardOppenentA": "https://i.postimg.cc/HJGBGGHq/image.jpg",
+                                            "predictedPercentage": 0,
+                                            "additionalData": [
+                                                {
+                                                    "key": "PREDICTION_SUBMITTED",
+                                                    "value": "true"
+                                                }
+                                                ]
+                                        }
+                                    ],
+                                    "backGroundImage": "https://i.postimg.cc/hJ9McCtf/BCCI-CSK.jpg",
+                                    "opponentAImage": "https://i.postimg.cc/HJGBGGHq/image.jpg",
+                                    "opponentBImage": "https://i.postimg.cc/HJGBGGHq/image.jpg",
+                                    "matchStartTime": "13:30"
+                                }
+                            ],
+                            "matchLocation": "Eden Garden Kolkata"
+                        }
+                    ],
+                    "predictionSubmitted": "true"
+                }
+            ]
+        }
+    ]
+}
